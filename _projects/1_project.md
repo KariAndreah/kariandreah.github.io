@@ -1,81 +1,86 @@
 ---
 layout: page
-title: project 1
-description: a project with a background image
-img: assets/img/12.jpg
+title: Open MYC API
+description: An api with all comedy open mics in 5 boroughs
+img: assets/img/OpenMYC.jpg
 importance: 1
 category: work
-related_publications: einstein1956investigations, einstein1950meaning
+related_publications: 
 ---
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
 
-To give your project a background in the portfolio page, just add the img tag to the front matter like so:
+All the comedy open mic info in the New York City five boroughs in one place, easily accessible through a modern RESTful API, which is hosted on [Heroku](https://open-myc-api-b3fdf5fc5994.herokuapp.com/). 
 
-    ---
-    layout: page
-    title: project
-    description: a project with a background image
-    img: /assets/img/12.jpg
-    ---
+
+
+
+# Get Requests: 
+
+### Get all mics 
+`GET /mics`
+
+### Get mics by id
+`Get /mics/{id}`
+
+### Get mics by day 
+`GET /mics/findByDay?day={day}`
+
+
+**day**: Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday
+
+### Get free mics by day 
+`GET /mics/findByDayFree?day={day}`
+
+
+**day**: Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday
+
+### Get mics by day and time 
+`GET /mics/findByDayTime?day={day}&startTime={startTime}&endTime={endTime}`
+
+
+**day**: Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday
+**startTime**: HH:MM:SS\
+**endTime**: HH:MM:SS
+
+### Get mics by day, borough, and time 
+`GET /mics/findByAll?day={day}&borough={borough}&startTime={startTime}&endTime={endTime}`
+
+
+**day**: Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday\
+**borough**: Manhattan, Queens, Bronx, Brooklyn, Staten-Island\
+**startTime**: HH:MM:SS\
+**endTime**: HH:MM:SS
+
+### Get free mics by day, borough, and time 
+`GET /mics/findByAllFree?day={day}&borough={borough}&startTime={startTime}&endTime={endTime}`
+
+
+**day**: Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday\
+**borough**: Manhattan, Queens, Bronx, Brooklyn, Staten-Island\
+**startTime**: HH:MM:SS\
+**endTime**: HH:MM:SS 
+
+***@Parameters are optional***
+
+***All requests have Pagination and Sorting, append parameters:***\
+pageNo={}\
+pageSize={}\
+sortBy={}
+
+**[Swagger API Documentation](https://open-myc-api-b3fdf5fc5994.herokuapp.com/swagger-ui/index.html#/)**
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/1.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/3.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+        {% include figure.html path="assets/img/OpenMYC.jpg" title="open myc api image" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
-</div>
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    This image can also have a caption. It's like magic.
-</div>
-
-You can also put regular text between your rows of images.
-Say you wanted to write a little bit about your project before you posted the rest of the images.
-You describe how you toiled, sweated, *bled* for your project, and then... you reveal its glory in the next row of images.
-
-
-<div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.html path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.html path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    You can also have artistically styled 2/3 + 1/3 images, like these.
+    A test response 
 </div>
 
 
-The code is simple.
-Just wrap your images with `<div class="col-sm">` and place them inside `<div class="row">` (read more about the <a href="https://getbootstrap.com/docs/4.4/layout/grid/">Bootstrap Grid</a> system).
-To make images responsive, add `img-fluid` class to each; for rounded corners and shadows use `rounded` and `z-depth-1` classes.
-Here's the code for the last row of images above:
 
-{% raw %}
-```html
-<div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.html path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.html path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-```
-{% endraw %}
+
+
+
+
