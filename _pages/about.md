@@ -6,7 +6,7 @@ subtitle: <a href='https://www.linkedin.com/in/hellokariburt/'>Software Engineer
 
 profile:
   align: right
-  image: Headshot.png
+  image: headshot.jpg
   image_circular: false # crops the image to make it circular
   address: >
     
